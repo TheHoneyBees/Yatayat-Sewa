@@ -1,0 +1,165 @@
+1	Service was good
+0	hate this
+1	One of the best travel
+1	Amazing ride..
+1	Super party!
+0	Too early to travel..need a coffee
+0	Damn..late again...
+0	Bad news, my ticket got cancelled.
+1	very easy
+1	Just watch it. Respect.
+1	Wonderful service.
+1	Bravo
+0	Had a bad evening, need urgently a beer.
+1	fell love again
+0	lost my keys
+1	On a trip excited
+1	Happy ride
+0	hate Mondays
+1	not bad
+0       don't
+1       good
+0	don't like it
+1	Love the new bus 
+0	He killed our good mood
+1	good spirits again
+1	This guy creates the most awesome pics ever with
+1	Cool!
+1	Many rooms and many hopes for new residents
+0	False hopes for the people attending the meeting
+1	set my new year's resolution
+0	The ugliest bus ever!
+0	Feeling bored
+0	Need urgently a pause
+1	Nice to see Ana made it
+1	My dream came true
+0	didn't see that one coming
+0	Sorry mate, there is no more seat for you
+0	Who could have possibly done this?
+1	won the challenge
+0	feel bad for what I did		
+1	had a great time tonight
+1	It was a lot of fun
+1	Thank you, making this possible
+0	just did a big mistake
+1	love it!!
+0	never loved
+0	hate you!
+1	hate to say goodbye
+1	Lovely!
+1	Like and share if you feel the same
+0	Don't spoil it!
+1	love rock and roll
+0	annoyed
+1	Finally passed success!
+1	Lovely seats
+0	lost my appetite
+0	Sad end for this journey
+1	nice journey
+0	Lonely
+1	Beautiful morning
+1	amazing
+1	Enjoying some time
+1	Special thanks to Driver
+1	Thanks God I left on time
+1	Greateful for a wonderful meal
+1	So happy to be home
+0	Hate to wait on a long queue		
+0	No available
+0	fuel diesel petrol outage, this is a nightmare
+0	Nobody to ask about directions
+1	Great journey!
+1	Nice trip
+1	just received a pretty flower
+1	Excellent idea
+0	feel sick
+0	very tired
+1	Such a good taste 
+0	Such a bad taste
+1	Enjoying brunch
+0	don't recommend this
+1	Thank you mom for recommending me
+0	never ever call you again
+0	just got kicked out of the contest
+1	Smiling
+0	Big pain to see my team loosing
+0	Bitter defeat tonight
+0	My purse was stollen
+1	Great to see you!
+0	lost every hope for seeing him again
+1	Nice dress!
+1	Stop wasting my time
+1	have a great idea
+1	Excited to go
+1       satisfied
+1	Feeling proud
+1	Cute design
+0	Cold winter ahead
+0	Hopeless struggle..
+0	Ugly design
+1	Big hug and lots of love
+1	hope you have a wonderful celebration
+1       like service
+1       love service
+0       hate service
+0       dislike
+0       am not good
+0       don't like service
+0       Didn't stop for lunch
+1       satisfied
+0	not satisfied
+1	like
+0	late
+1	on time
+1	Their service was good
+0       Their service was not good
+1	I am satisfied
+0	I am not satisfied
+0	It was not an amazing trip.
+0       I don't like this trip.
+0	was't an amazing trip.
+0	Friends don't like this trip.
+0	It was't an amazing trip.
+0	It was a worst trip.
+1	I like your service.
+1	Friends like your service.
+1	Yeah, service was good.
+0	I don't like your service.
+0	I hate your service.
+1	I like service
+1	I like this vehicle service
+0	I don't like this vehicle service
+1	I love this service
+0	I don't love this service
+1	service is amazing
+1	like your service
+0	Bad service
+0	Hate your service
+0	I dislike your service.
+1	nice experience
+1	nice experienced
+0	poor
+0	expensive
+0	not secure
+0	poor security
+1	good security
+1	safe 
+1	secure
+0	:(
+1	:)
+1	Supper, i like it
+1	Satisfactory
+1	Comfortable and relaxing
+0	Bad seats
+1	comfortable seats
+0	uncomfortable seat
+0       bad service
+0       the service was bad
+0       dont like the bad service
+1       the service not so bad
+0       Didn't like the seat.
+1       amazing trip
+1       amazing seats
+1       nice trips
+0       high cost
+1       friendly
