@@ -10,23 +10,24 @@
         <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
         <link rel="stylesheet" href="css/style.css">
-<!--        <script>
-            
-            function checklogin() {
-                document.getElementById('checkk').click();
-            }
-            function test() {
-                alert("Please Login !");
-                document.getElementById('forlogin').click();
-            }
-        </script>-->
+        <!--        <script>
+                    
+                    function checklogin() {
+                        document.getElementById('checkk').click();
+                    }
+                    function test() {
+                        alert("Please Login !");
+                        document.getElementById('forlogin').click();
+                    }
+                </script>-->
         <script>
             $(document).ready(function () {
+
                 $('.busgroup').click(function () {
                     var id = this.id;
                     alert(id);
                     var textbox = document.getElementById('testbox');
-                    textbox.value=id;
+                    textbox.value = id;
                     $.ajax({
                         url: "RetrieveBusDetail",
                         type: "POST",
@@ -34,15 +35,14 @@
                             number: $('#testbox').val()
                         },
                         success: function (responseText) {
-                                alert(responseText);
+                            alert(responseText);
                         },
 
                         error: function (responseText) {
                             alert("Sorry, there was a problem!" + responseText);
                         }
                     });
-                     document.getElementById('testbox').value(id);
-
+                    document.getElementById('testbox').value(id);
                     $('#vechileDetailWrapper').fadeIn(300);
                     $('#vechileDetail').slideDown(400);
                 });
@@ -85,6 +85,7 @@
         </script>
 
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
     </head>
     <body>
         <%@ include file="pleaselogin.jsp" %>
@@ -111,6 +112,7 @@
                 <th width=150px>Departure Time</th>
                 <th width=100px>Seats Available</th>
                 <th width=120px>Fare</th>
+
                 <th width=100px>Remarks</th>
             </tr> <%  for (SearchBus bus : buslist) {%>
             <tr><td data-th="Bus"><%=i%></td>
@@ -132,8 +134,7 @@
                     }
                 }%>
         </table>
-        
-         <div id="vechileDetailWrapper">
+        <div id="vechileDetailWrapper">
             <div class="mask"></div>
             <div id="vechileDetail">
                 <div class="header">
@@ -215,7 +216,7 @@
                 </div>
             </div>
         </div>
-        
+
         <script src="js/index.js"></script>
         <%@ include file="footer.jsp" %>
     </body>

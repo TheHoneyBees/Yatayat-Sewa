@@ -12,6 +12,7 @@ public class SearchBus {
          private int seats;
          private int scheduleid=0;
          private int routeid=0;
+         private float rating=0;
     /**
      * @return the bus_number
      */
@@ -164,6 +165,20 @@ public class SearchBus {
      */
     public void setRouteid(int routeid) {
         this.routeid = routeid;
+    }
+
+    /**
+     * @return the rating
+     */
+    public float getRating() {
+        return rating;
+    }
+
+    /**
+     * @param rating the rating to set
+     */
+    public void setRating(float rating) {
+        this.rating = rating;
     }
 	 
 	

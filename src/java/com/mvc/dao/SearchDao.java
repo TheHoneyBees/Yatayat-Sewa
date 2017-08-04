@@ -55,6 +55,17 @@ public class SearchDao {
                 bus_detail.setTravel_type(resultSet.getString("travel_type"));
                 bus_detail.setSeats(resultSet.getInt("available_seats"));
                 bus_detail.setFare(resultSet.getInt("fare"));
+                float rating = 0;
+                String bus_number = resultSet.getString("bus_number");
+                String q = "select AVG(rate) as avgRating from rating where bus_number=?";
+                pst=con.prepareStatement(q);
+                pst.setString(1, bus_number);
+                ResultSet rs = pst.executeQuery();
+                while (rs.next()) {
+                    rating = Float.parseFloat(rs.getString("avgRating"));
+                    System.out.println(rating + bus_number);
+                }
+                bus_detail.setRating(rating);
                 buslist.add(bus_detail);
             }
             return buslist;

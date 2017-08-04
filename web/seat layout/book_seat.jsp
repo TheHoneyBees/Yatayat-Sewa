@@ -126,7 +126,7 @@
         </script>
         <span style="display:block; height: 100px;"></span>
         <form name="form" action="book_now" method="post" onsubmit="return validateForm()">
-            <div id="seat_layout" style="margin-top: 20px;">
+            <div id="seat_layout" style="margin-top: 10px;">
                 <div class="plane">
                     <div class="cabin">
                         Please select your seats
@@ -302,9 +302,9 @@
             <p></p>
             <p>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <label>Selected Seats <input type="text" name="bookedseats" value="" readonly="readonly" /></label>  &emsp;&emsp;&emsp;
+                &nbsp; 
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label>Selected Seats <input type="text" name="bookedseats" value="" readonly="readonly" /></label>  &emsp;&emsp;&emsp; &emsp;&emsp;&emsp;
                 <label> Total: Rs <input type="text" name="total"  value="0" readonly="readonly" /></label>
                 <input type="submit" value="Book Now">
             </p>

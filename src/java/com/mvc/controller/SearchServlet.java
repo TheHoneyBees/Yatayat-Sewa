@@ -28,7 +28,6 @@ public class SearchServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-
         String destination, departure;
         String username = (String)session.getAttribute("username");
         //String username=request.getParameter("username");

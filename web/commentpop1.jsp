@@ -17,7 +17,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link href="stylecomment.css" rel="stylesheet" type="text/css"/>    
+        <link href="styleforcomment.css" rel="stylesheet" type="text/css"/>    
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
 
@@ -30,6 +30,12 @@
 
         <script>
             $(document).ready(function () {
+//                var name = 'rating';
+//                var SelectdValue = '2.5';
+//                $('input[name="' + name + '"][value="' + SelectdValue + '"]').prop('checked', true);
+//                $("input[name='rating']").change(function () {
+//                    alert($("input[name='rating']:checked").val());
+//                });
                 $('#vechileDetailWrapper').fadeIn(300);
                 $('#vechileDetail').slideDown(400);
                 $('.busgroup').click(function () {
@@ -111,23 +117,66 @@
                             } else {
                                 location.reload();
                             }
-                        },
+                        }
                     });
                 }
             }
 
         </script>
+        <style>
+            @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+            fieldset, label { margin-top:0px; padding: 0; }
+            /*            body{ margin: 20px; }
+                        h1 { font-size: 1.5em; margin: 10px; }*/
+
+            /****** Style Star Rating Widget *****/
+
+            .ratingclass { 
+                border: none;
+                float: left;
+            }
+            .ratingclass > input { display: none; } 
+            .ratingclass > label:before { 
+                margin: 4px;
+                font-size: 1.25em;
+                font-family: FontAwesome;
+                display: inline-block;
+                content: "\f005";
+            }
+
+            .ratingclass > .half:before { 
+                content: "\f089";
+                position: absolute;
+            }
+
+            .ratingclass > label { 
+                color: #ddd; 
+                float: right; 
+            }
+
+            /***** CSS Magic to Highlight Stars on Hover *****/
+
+            .ratingclass > input:checked ~ label, /* show gold star when clicked */
+            .ratingclass:not(:checked) > label:hover, /* hover current star */
+            .ratingclass:not(:checked) > label:hover ~ label { color: crimson;  } /* hover previous stars in list */
+
+            .ratingclass > input:checked + label:hover, /* hover current star when changing rating */
+            .ratingclass > input:checked ~ label:hover,
+            .ratingclass > label:hover ~ input:checked ~ label, /* lighten current selection */
+            .ratingclass > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+        </style>
 
     </head>
     <body>
         <form name="formname" action="test" method="post">
             <input type="hidden" name="key" id="testbox">
-
         </form>
-
         <%@ include file="pleaselogin.jsp" %>
         <br><br><br><br>
         <% int i = 1;
+            String[] check = new String[50];
+            int loop = 1;
             String tempBusName = null;
             username = (String) session.getAttribute("username");
             ArrayList<SearchBus> buslist = (ArrayList) session.getAttribute("buslist");
@@ -139,7 +188,7 @@
             PreparedStatement pst = null;
             ResultSet resultSet = null;
         %>
-      
+
         <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;
@@ -155,6 +204,7 @@
                 <th width=150px>Departure Time</th>
                 <th width=100px>Seats Available</th>
                 <th width=120px>Fare</th>
+                <th width=150px>Rating</th>
                 <th width=100px>Remarks</th>
             </tr> <%  for (SearchBus bus : buslist) {
                     tempBusName = bus.getName();
@@ -166,6 +216,40 @@
                 <td data-th="Departure"><%= bus.getTime()%></td>
                 <td data-th="Seats"><%= bus.getSeats()%></td>
                 <td data-th="Fare"><%= bus.getFare()%></td>
+                <td><fieldset class="ratingclass">
+                        <%
+                            int value = (int) bus.getRating();
+                            System.out.println(bus.getBus_number() + "rating value is" + value);
+                            if (value == 5) {
+                                check[(i * 5) - 4] = "checked";
+                            } else if (value == 4) {
+                                check[(i * 5) - 3] = "checked";
+
+                            } else if (value == 3) {
+                                check[(i * 5) - 2] = "checked";
+                                System.out.println("value 3 ko val" + ((i * 5) - 2) + check[8]);
+
+                            } else if (value == 2) {
+                                check[(i * 5) - 1] = "checked";
+
+                            } else if (value == 1) {
+                                check[(i * 5)] = "checked";
+                                System.out.println("value 1 ko val" + (i * 5) + check[5] + check[10]);
+                            }
+                        %>
+                        <input type="radio"  name="rating5" value="5" <%=check[loop]%>/><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                        <%loop++;%>
+
+                        <!--<input type="radio" id="star4half" name="rating" value="4.5"   /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>-->
+                        <input type="radio"  name="rating4" value="4" <%=check[loop]%>/><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                        <%loop++;%><!--<input type="radio" id="star3half" name="rating" value="3.5" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>-->
+                        <input type="radio" name="rating3" value="3"  <%=check[loop]%>/><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                        <%loop++;%> <!--<input type="radio" id="star2half" name="rating" value="2.5" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>-->
+                        <input type="radio"  name="rating2" value="2"  <%=check[loop]%>/><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                        <%loop++;%> <!--<input type="radio" id="star1half" name="rating" value="1.5"  /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>-->
+                        <input type="radio" name="rating1" value="1"  <%=check[loop]%>/><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                        <%System.out.println(check[loop] + "/////********"); %><%loop++;%> <!--<input type="radio" id="starhalf" name="rating" value="0.5" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>-->
+                    </fieldset></td>
                 <td data-th="Remarks">
                     <%if (username == null) {%>
                     <a  href="#" onclick="test()" id="bookbtnfirst">Book Now !</a>
@@ -184,12 +268,12 @@
 
         <div id="vechileDetailWrapper">
             <div class="mask"></div>
-            <div id="vechileDetail">
-                <div class="header">
+            <div id="vechileDetail" >
+                <div class="header" >
                     <span class="head">Vehicle Details</span>
                     <span class="close">x</span>
                 </div>
-                <div class="busDetail">
+                <div class="busDetail" >
                     <div class="busName">
                         <%
                             ScheduleBean sb = (ScheduleBean) request.getAttribute("sbean");
@@ -227,6 +311,16 @@
                         <% } %>
                     </table>
                 </div>
+                <div class="busDetail">
+                    <fieldset class="ratingclass">
+                        <h4>Rate me !</h4>
+                        <input type="radio"  name="rating" value="5"/><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                        <input type="radio"  name="rating" value="4"/><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                        <input type="radio"  name="rating" value="3"/><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                        <input type="radio"  name="rating" value="2"/><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                        <input type="radio"  name="rating" value="1"/><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                    </fieldset>
+                </div>
                 <div class="review">
                     <div class="heading">
                         Add Review
@@ -236,14 +330,16 @@
                             <li class="textarea">
                                 <textarea id="txtAreaReview" placeholder="Enter your review..  "></textarea>
                             </li>
-                            <li class="button">
-                                <span class="viewReview">View all Reviews</span>
-                                <button onclick="test()" id="submitReview">Submit</button>
+                            <li class="button1">
 
+                                <button class="btn" onclick="test()" id="submitReview">Submit</button>
+                                <span class="viewReview">View all Reviews</span>
                             </li>
+
                             <% ArrayList<CommentBean> cb = (ArrayList<CommentBean>) request.getAttribute("commentlist");
                                 for (CommentBean com : cb) {
                                     if (com.getRemark().equals("1")) {%>
+
                             <li class="userReview good">
                                 <div class="heading">
                                     <span class="userName">
@@ -271,8 +367,10 @@
                                     <%=com.getDescription()%>
                                 </div>
                             </li>
+
                             <% }
                                 }%>
+
                         </ul>
                     </div>
                 </div>

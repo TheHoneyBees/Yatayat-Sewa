@@ -69,7 +69,7 @@
         <input type="hidden" id="forsubmitreview" value="<%=username%>">
         <div class="tb_header">
             <div class="container">
-                <div class="col-md-6" style="padding:10;">
+                <div class="col-md-6" style="padding:0">
                     <div class="tb_logo"> <a href="homeLoginSession"><img src="assets/images/yatayat_logo.png"> </a> </div>
                 </div>
                 <div class="col-md-4" style="padding:0;">
@@ -92,7 +92,7 @@
                                     <span style="color:#f0a2a3;">/</span></li>
                                 <li><a  data-dismiss="modal" href="#myModal" data-toggle="modal" data-target="#myModal">Sign Up</a></li>
                                     <%} else {%>
-                                &nbsp;
+                               
                                 <li><a href="#" >Welcome  <%=username%></a>  <span style="color:#f0a2a3;">/</span></li>
                                 <li><a href="logout">Logout</a></li>
                                     <%}%>
